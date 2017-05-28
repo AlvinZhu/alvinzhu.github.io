@@ -22,6 +22,15 @@ type: page
 
 ## 友情链接
 
+<p class="power">
+    <span>
+        Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
+    </span>
+    <span>
+        Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
+    </span>
+</p>
+
 ## Comments
 
 {% include comments.html %}
