@@ -20,7 +20,7 @@ type: page
 * GitHub：[AlvinZhu](https://github.com/AlvinZhu)
 * Email：alvin.zhuge@gmail.com
 
-## 友情链接
+## 关于
 
 <p class="power">
     <span>
