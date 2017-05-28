@@ -2,8 +2,19 @@
 layout: post
 category: deep_learning
 title: Object Detection
-date: 2015-10-09
+tags: deep_learning
+author: Alvin Zhu
+date: 2017-05-28
 ---
+
+* content
+{:toc}
+
+Object detection papers and projects.
+
+
+
+
 
 | Method              | VOC2007     | VOC2010     | VOC2012     | ILSVRC 2013 | MSCOCO 2015 | Speed       |
 |:-------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
