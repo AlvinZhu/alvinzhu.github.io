@@ -2,7 +2,7 @@
 layout: post
 category: deep_learning
 title: Object Detection
-tags: deep_learning
+tags: deep_learning object_detection
 author: Alvin Zhu
 date: 2017-05-28
 ---
