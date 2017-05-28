@@ -2,7 +2,7 @@
 layout: post
 category: deep_learning
 title: Keep Up With New Trends
-tags: deep_learning 端口 markdown Foxit RubyGems HTML CSS
+tags: deep_learning
 author: Alvin Zhu
 date: 2017-05-28
 ---
