@@ -1,6 +1,23 @@
-# 节约内存的DenseNet实现
+---
+layout: post
+mathjax: true
+category: deep_learning
+title: Memory-Efficient Implementation of DenseNets
+tags: densenet deep_learning classification recognition
+author: Alvin Zhu
+date: 2017-10-07
+---
 
-[TOC]
+* content
+{:toc}
+
+节约内存的DenseNet实现(Memory-Efficient Implementation of DenseNets).
+
+
+
+
+
+# 节约内存的DenseNet实现
 
 ## 摘要
 
@@ -35,7 +52,7 @@ DenseNet架构[^9]在参数使用和计算时间方面都非常高效。在Image
 
 总体上来看，DenseNet明确地连接所有特征尺寸匹配的层。 如下图（图1）所示：
 
-![Figure 1](figure1.png)
+![Figure 1](/assets/2017-10-07-memory-efficient-implementation-of-densenets/figure1.png)
 
 黄等人将一组直接连接的层称为密集块，通常在其后面是池化层（减少特征图尺寸）或最终分类器。传统神经网络层仅使用最新的特征。在DenseNet中，层可以访问其密集块中的所有先前层的特征。用公式来表示：（$x_{\ell}$表示层$\ell$生成的特征）
 $$
@@ -47,7 +64,7 @@ $$
 
 **预激活批量归一化。**如[^9]所述，DenseNet架构使用预激活批量归一化[^7]。与传统架构不同，预激活网络在卷积运算之前而不是之后应用批量归一化和非线性。虽然这似乎是一个小小的变化，但它在DenseNet性能上有很大的不同。批量归一化对输入特征应用缩放和偏置。如果每个层都应用自己的批量归一化操作，那么每个层对先前的特征应用唯一的缩放和偏差。例如，第2层批量归一化可能会对第1层的特征用正数进行缩放，而第3层可能会将相同的特征用负数缩放。在应用非线性之后，层2和层3从层1提取相反的信息。如果所有层共享相同的批量归一化操作，或者在卷积操作之后发生归一化，就不会发生这种情况。如果没有预激活，100层DenseNet-BC($k = 12$)的CIFAR-10上的错误从4.51增长到5.18。在CIFAR-100上，错误从22.27增加到24.30。如下图（图2左侧）所示：
 
-![Figure 2](figure2.png)
+![Figure 2](/assets/2017-10-07-memory-efficient-implementation-of-densenets/figure2.png)
 
 给定一个具有m层的DenseNet，预激活可以产生高达每层m个归一化副本。由于每个副本具有不同的缩放和偏置，因此在标准深度学习框架上的原始实现通常为这$(m - 1)(m - 2) / 2$重复的特征图分别分配内存。
 
@@ -61,7 +78,7 @@ $$
 
 在现代深度学习库中，计算操作通常由计算图中的边表示。计算图节点表示存储在存储器中的中间特征图。
 
-![Figure 3](figure3.png)
+![Figure 3](/assets/2017-10-07-memory-efficient-implementation-of-densenets/figure3.png)
 
 DenseNet层的原始实现（无瓶颈层）的计算图如上图（图3左上）所示。（计算图大致基于原始实现：https://github.com/liuzhuang13/DenseNets/）每层的输入是先前层的特征（彩色框）。由于这些特征源于不同的层，它们不会连续存储在内存中。因此，原始实现的第一操作是复制这些特征中的每一个并将它们连接到连续的存储块（左中）。如果$\ell$个先前层每个生成$k$个特征，则连续的内存块必须容纳$\ell \times k$个特征图。这些连接的特征被输入到批量归一化操作中（中心右），其类似地分配新的$\ell \times k$个连续的存储块。（ReLU不分配新的内存，而是直接在现有内存上计算，因此为了简化，我们选择将其从计算图中排除。）最后，卷积运算（最右）从批量归一化输出生成$k$个新特征。从图3（左上角）可以清楚地看出内存的平方增长。两个中间操作需要一个$O(\ell k)$大小的内存来存储先前层计算的特征。相比之下，输出特征只需要每层一个恒定$O(k)$大小的内存。
 
@@ -91,7 +108,7 @@ DenseNet层的原始实现（无瓶颈层）的计算图如上图（图3左上�
 
 这三个实现的内存消耗（在LuaTorch和PyTorch中）如下图（图4）所示：
 
-![Figure 4](figure4.png)
+![Figure 4](/assets/2017-10-07-memory-efficient-implementation-of-densenets/figure4.png)
 
 （没有PyTorch本机实现，因为PyTorch自动共享渐变存储。）通过四次二次运算，本地实现非常快速地成为内存密集型。 160层网络的存储器使用量（每层k = 12个特性，1.8M参数）大约是40层网络的10倍（k = 12,160K参数）。培训超过160层的大型网络需要超过12 GB的内存，这不仅仅是典型的单GPU。共享梯度降低了内存成本的一部分，内存消耗仍随着深度而快速增长。另一方面，使用所有的内存共享操作显着地减少了内存消耗。在LuaTorch中，160层模型使用Native Native所需的22％的内存。在相同的内存预算（12 GB）下，可以训练一个340层的模型，它是2.5x深的，具有最好的本地实现模型的6倍的参数。
 
@@ -101,7 +118,7 @@ DenseNet层的原始实现（无瓶颈层）的计算图如上图（图3左上�
 
 内存优化不会对训练时间产生显着的影响。如下图（图5）所示：
 
-![Figure 5](figure5.png)
+![Figure 5](/assets/2017-10-07-memory-efficient-implementation-of-densenets/figure5.png)
 
 我们绘制了一个100层DenseNet-BC（k = 12）在NVIDIA Maxwell Titan-X上的每个分段的时间。共享梯度存储不会产生任何时间成本。共享批量归一化和级联存储在LuaTorch上增加了大约15％的时间开销，在PyTorch上增加了20％。这种额外的成本是反向传播期间重新计算操作的结果。对于任何大小的DenseNets，共享渐变存储是有意义的。如果GPU内存有限，共享批量归一化/级联存储的时间开销构成合理的权衡。
 
@@ -111,7 +128,7 @@ ImageNet结果。我们在ImageNet IVLSRC分类数据集[13]上测试新的内�
 
 如下图（图6）所示：
 
-![Figure 6](figure6.png)
+![Figure 6](/assets/2017-10-07-memory-efficient-implementation-of-densenets/figure6.png)
 
 这些DenseNets的前1个错误性能。用有效实现训练的模型被表示为绿色点（标准学习速率表的平方，余弦星）。我们将这些模型的性能与使用原始实施训练的浅层DenseNets进行比较。另外，我们比较[6]中引入的ResNet模型和[14]中介绍的ResNeXt模型。用单中心试验作物获得结果。
 
