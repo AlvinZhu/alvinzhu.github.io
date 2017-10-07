@@ -11,7 +11,7 @@ date: 2017-10-07
 * content
 {:toc}
 
-节约内存的DenseNet实现(Memory-Efficient Implementation of DenseNets).
+节约内存的DenseNet实现(Memory-Efficient Implementation of DenseNets)全文翻译。
 
 
 
