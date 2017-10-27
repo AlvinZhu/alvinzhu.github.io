@@ -11,13 +11,7 @@ date: 2017-10-27
 * content
 {:toc}
 
-Ubuntu 开启 TCP BBR。
-
-
-
-
-
-# Ubuntu 开启 TCP BBR
+内核版本4.9以上，输入以下命令即可：
 
 ```sh
 modprobe tcp_bbr
@@ -26,4 +20,10 @@ echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
 echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 sysctl -p
 ```
+
+
+
+
+
+
 
