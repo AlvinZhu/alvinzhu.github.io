@@ -7,7 +7,7 @@
 
 # Site settings
 title: Alvin's Blog
-brief-intro: Hi world~
+brief-intro: 这里记录着我的学习之路
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://alvinzhu.github.io" # the base hostname & protocol for your site
 
