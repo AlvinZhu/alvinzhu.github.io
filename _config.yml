@@ -9,7 +9,7 @@
 title: Alvin's Blog
 brief-intro: 这里记录着我的学习之路
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://alvinzhu.github.io" # the base hostname & protocol for your site
+url: "https://alvin.cf" # the base hostname & protocol for your site
 
 permalink: /:year/:month/:day/:title/
 
