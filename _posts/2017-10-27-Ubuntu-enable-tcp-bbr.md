@@ -1,9 +1,9 @@
 ---
 layout: post
 mathjax: true
-category: programing
+category: Linux
 title: Ubuntu 开启 TCP BBR
-tags: Ubuntu TCP BBR
+tags: Ubuntu TCP BBR Linux
 author: Alvin Zhu
 date: 2017-10-27
 ---

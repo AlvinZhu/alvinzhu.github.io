@@ -1,20 +1,14 @@
 ---
 layout: post
-category: deep_learning
-title: Keep Up With New Trends
-tags: deep_learning
+category: 深度学习
+title: 关注学术界最新动态
+tags: 深度学习
 author: Alvin Zhu
 date: 2017-05-28
 ---
 
 * content
 {:toc}
-
-关注学术界最新动态～
-
-
-
-
 
 # ICLR 2017
 
@@ -27,6 +21,10 @@ date: 2017-05-28
 **CVPR'17 Tutorial: Deep Learning for Objects and Scenes**
 
 [http://deeplearning.csail.mit.edu/](http://deeplearning.csail.mit.edu/)
+
+
+
+
 
 # NIPS 2016
 

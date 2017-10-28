@@ -1,9 +1,9 @@
 ---
 layout: post
 mathjax: true
-category: deep_learning
-title: Memory-Efficient Implementation of DenseNets
-tags: densenet deep_learning classification recognition
+category: 深度学习
+title: 节约内存的DenseNet实现(Memory-Efficient Implementation of DenseNets) 论文翻译 
+tags: DenseNet 深度学习 分类 识别
 author: Alvin Zhu
 date: 2017-10-07
 ---
@@ -11,17 +11,14 @@ date: 2017-10-07
 * content
 {:toc}
 
-节约内存的DenseNet实现(Memory-Efficient Implementation of DenseNets)全文翻译。
-
-
-
-
-
-# 节约内存的DenseNet实现
-
 ## 摘要
 
 DenseNet架构[^9]由于特征重用而具有很高的计算效率。然而，原始的DenseNet实现可能需要大量的GPU内存：如果不处理得当，预激活批量归一化[^7]和连续卷积操作可以生成随网络深度的平方增长的特征图。在本中中，我们介绍了减少训练过程中DenseNet的内存消耗的策略。通过策略性地使用共享内存分配，我们将存储特征图的内存成本从深度的平方减少到随深度线性增长。没有GPU内存的瓶颈，现在可以训练极深的DenseNet。具有14M个参数的网络可以在单个GPU上训练，提高了4M。以前不可能训练的264层DenseNet（73M个参数）现在可以在一台具有8个NVIDIA Tesla M40 GPU的工作站上进行训练。在ImageNet ILSVRC分类数据集上这个大型的DenseNet达到了20.26％的领先的single-crop top-1错误率。
+
+
+
+
+
 
 ## 简介
 

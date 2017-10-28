@@ -1,8 +1,8 @@
 ---
 layout: post
-category: deep_learning
-title: Object Detection
-tags: deep_learning object_detection
+category: 深度学习
+title: Object Detection 目标检测
+tags: 深度学习 目标检测
 author: Alvin Zhu
 date: 2017-05-28
 ---
@@ -10,11 +10,7 @@ date: 2017-05-28
 * content
 {:toc}
 
-Object detection papers and projects.
-
-
-
-
+Object detection 目标检测 论文与项目。
 
 | Method              | VOC2007     | VOC2010     | VOC2012     | ILSVRC 2013 | MSCOCO 2015 | Speed       |
 |:-------------------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|
@@ -37,6 +33,11 @@ Object detection papers and projects.
 | R-FCN (ResNet-101)  | 79.5%       |             |             |             |             | 0.17sec(K40), 0.12sec(TitianX) |
 | R-FCN (ResNet-101),multi sc train | 83.6% |     | 82.0%       |             | 31.5%(@[0.5-0.95]), 53.2%(@0.5) | |
 | PVANet 9.0          | 89.8%       |             | 84.2%       |             |             | 750ms(CPU), 46ms(TitianX) |
+
+
+
+
+
 
 # Leaderboard
 

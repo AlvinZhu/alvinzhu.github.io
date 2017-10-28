@@ -1,8 +1,8 @@
 ---
 layout: post
-category: deep_learning
-title: Classification / Recognition
-tags: deep_learning classification recognition
+category: 深度学习
+title: 分类与识别
+tags: 深度学习 分类 识别
 author: Alvin Zhu
 date: 2017-05-28
 ---
@@ -10,7 +10,7 @@ date: 2017-05-28
 * content
 {:toc}
 
-Classification adn recognition papers and projects.
+分类、识别论文与项目
 
 
 

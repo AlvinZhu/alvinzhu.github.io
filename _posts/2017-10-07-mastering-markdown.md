@@ -1,23 +1,15 @@
 ---
 layout: post
 mathjax: true
-category: programing
-title: Mastering Markdown
-tags: markdown code-style programing
+category: 编程
+title: Markdown教程
+tags: Markdown 编码风格 编程
 author: Alvin Zhu
 date: 2017-10-07
 ---
 
 * content
 {:toc}
-
-Markdown教程。
-
-
-
-
-
-# Markdown教程
 
 ## Markdown简介
 
@@ -26,6 +18,11 @@ Markdown是一种轻量级、简单的语法，用于编写文档。使用Markdo
 我们使用的Markdown语法遵循[Github Flavored Markdown](https://github.github.com/gfm/)标准。也可以参阅[Mastering Markdown](https://guides.github.com/features/mastering-markdown/)这个简短的教程。
 
 推荐的Markdown编辑器为[Typora](https://typora.io/)，也可使用其它遵循[Github Flavored Markdown](https://github.github.com/gfm/)标准的编辑器。
+
+
+
+
+
 
 ## 基本Markdown语法
 

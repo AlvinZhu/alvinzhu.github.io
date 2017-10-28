@@ -1,9 +1,9 @@
 ---
 layout: post
 mathjax: true
-category: deep_learning
+category: 深度学习
 title: Faster R-CNN：利用区域提案网络实现实时目标检测 论文翻译
-tags: faster_r-cnn deep_learning object_detection
+tags: Faster_R-CNN 深度学习 目标检测
 author: Alvin Zhu
 date: 2017-10-12
 ---
