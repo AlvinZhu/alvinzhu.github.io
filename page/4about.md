@@ -20,16 +20,10 @@ type: page
 * GitHub：[AlvinZhu](https://github.com/AlvinZhu)
 * Email：alvin.zhuge@gmail.com
 
-## 关于
+## 友情链接
 
-<p class="power">
-    <span>
-        Site powered by <a href="https://jekyllrb.com/">Jekyll</a> & <a href="https://pages.github.com/">Github Pages</a>.
-    </span>
-    <span>
-        Theme designed by <a href="https://github.com/Gaohaoyang">HyG</a>.
-    </span>
-</p>
+[sczhengyabin](https://sczhengyabin.me)
+
 
 ## 评论
 
