@@ -32,7 +32,6 @@ type: page
 ## 网站
 
 - [AlternativeTo](https://alternativeto.net/): 查找替代软件
-- [MSDN.ITellYou](https://msdn.itellyou.cn/): 微软系软件下载
 - [皮皮电子书图书馆](http://www.xttsg.com/): 文献查询、下载
 - [phoronix](https://www.phoronix.com) Linux相关新闻
 - [GitHub](https://github.com/) 特别强调！虽然大家都知道，生产力的来源。
