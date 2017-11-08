@@ -24,7 +24,7 @@ cmake ..
 make -j9
 ```
 
-现在，使用Hunter管理依赖后，是这样的：
+现在，使用[Hunter](https://github.com/ruslo/hunter)管理依赖后，是这样的：
 
 ```sh
 # 依赖是什么？不关心，直接编译
