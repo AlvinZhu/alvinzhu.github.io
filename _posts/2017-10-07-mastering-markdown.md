@@ -1,9 +1,9 @@
 ---
 layout: post
 mathjax: true
-category: 编程
+category: 开发
 title: Markdown教程
-tags: Markdown 编码风格 编程
+tags: Markdown 编码风格 开发
 author: Alvin Zhu
 date: 2017-10-07
 ---
