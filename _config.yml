@@ -37,7 +37,7 @@ disqus_shortname: alvinzhu-github-io
 # 百度统计 id，将统计代码替换为自己的百度统计id，即
 # hm.src = "//hm.baidu.com/hm.js?xxxxxxxxxxxx";
 # xxxxx字符串
-baidu_tongji_id: 840ddf8d91791a15546d2ea01b0b0ce1
+baidu_tongji_id: 1a81cb8ed71369d7ba5865de89803a26
 google_analytics_id: UA-100013779-1 # google 分析追踪id
 
 # Build settings
