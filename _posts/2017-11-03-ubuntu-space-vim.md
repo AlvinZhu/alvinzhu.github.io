@@ -17,5 +17,7 @@ date: 2017-11-03
 ## 安装
 
 ```shell
+sudo apt install vim-nox-py2
 curl -sLf https://spacevim.org/install.sh | bash
 ```
+
