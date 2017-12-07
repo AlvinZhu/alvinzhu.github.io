@@ -94,6 +94,16 @@ XorgModulePath=/usr/lib/nvidia-384/xorg,/usr/lib/xorg/modules
 
 可以添加`Option "Coolbits" "28"`，开启`nvidia-settings`里面的超频和风扇调节。
 
+最后把CUDA相关的动态链接库的路径加入到`/etc/ld.so.conf`中：
+
+```sh
+include /etc/ld.so.conf.d/*.conf
+include /usr/lib/nvidia-384/ld.so.conf
+include /usr/lib/nvidia-384/alt_ld.so.conf
+```
+
+并执行`sudo ldconfig`
+
 配置完成，重启。
 
 另外，要打开`nvidia-settings`，需要这样：
