@@ -23,7 +23,7 @@ type: page
 - [Zeal](https://zealdocs.org/) 各种编程语言、相关框架的文档查询
 - [JetBrains IDEs](https://www.jetbrains.com/) 专业好用的IDE
 - [GitKraken](https://www.gitkraken.com/) Git GUI工具
-- [py-googletrans](https://github.com/AlvinZhu/py-googletrans) 网上fork，并经过我亲手改进的Ubuntu下使用的Google划词翻译神器
+- [alvin-translate](https://github.com/AlvinZhu/alvin-translate) 调用translate-shell的Ubuntu下使用的Google划词翻译神器
 - [Synergy](https://symless.com/synergy) 一套键鼠控制多台电脑
 
 ## 网站
