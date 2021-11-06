@@ -18,8 +18,11 @@ Windows的RDP远程桌面好用，清晰、低延迟、网络流量低、剪贴�
 
 
 
-
 最早用Ubuntu 8.04，简单，开箱即用。后来折腾了一段时间Gentoo，可定制性极强，系统的方方面面都自己掌控，就是每次编译时间有点长。工作以后没时间折腾，又换回了Ubuntu。什么？Windows？一边玩去，很久很久以前确实挺喜欢折腾Windows的，但是自从用了Linux，再也不想碰Windows。再后来，实在忍受不了Ubuntu自作聪明的GPU Manager和对上游软件包的乱改，加入了Arch邪教。不知不觉Arch Linux已经用了3年，再也没有重装过系统，随着自己对Arch Linux越來越熟悉，配置的越來越完善，可以养老了。最近又补足了一个短板，远程桌面。
+
+截图是Remmina连接
+
+![Remmina截图](/assets/2021-11-06-archlinux-xrdp/remmina.png)
 
 配置过程意想不到的简单。基本上参考[ArchWiki](https://wiki.archlinux.org/title/xrdp)
 
@@ -49,8 +52,6 @@ session         optional        pam_keyinit.so force revoke
  */ 
 polkit.addRule(function(action, subject) {
     if ((  action.id == "org.freedesktop.policykit.exec"
-    || action.id == "org.freedesktop.systemd1.manage-units"
-    || action.id == "org.freedesktop.systemd1.manage-unit-files"
     || action.id == "org.fedoraproject.FirewallD1.all"
     || action.id == "org.fedoraproject.FirewallD1.config"
     || action.id == "org.freedesktop.NetworkManager.settings.modify.system") &&
@@ -75,4 +76,3 @@ sudo systemctl enable --now xray.service xrdp-sesman.service
 
 iPad+键盘，连远程桌面写代码，这才是生产力！
 
-![Remmina截图](/assets/2021-11-06-archlinux-xrdp/remmina.png)
